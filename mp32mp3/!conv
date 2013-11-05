@@ -1,0 +1,4 @@
+mkdir cd111
+for name in *.mp3; 
+  do echo "Converting $name"; lame --abr 128k "$name" "./cd111/$(basename "$name" .mp3).mp3" || echo "ERROR"; 
+done;
