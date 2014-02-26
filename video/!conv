@@ -1,0 +1,8 @@
+!#/bin/bash
+
+mkdir conv
+for name in $(find -iname *.avi); do
+  
+  #echo ./conv/$(basename ${name,,} .avi).mp4
+  echo "Converting $name";  avconv -i "$name" -c:v libx264 "./conv/$(basename ${name,,} .avi).mp4"  || echo "ERROR"; 
+done;
